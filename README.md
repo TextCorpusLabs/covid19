@@ -60,7 +60,9 @@ I am choosing the `d:/covid19` directory because my d drive is big enough to hol
 python extract_metadata.py -in d:/covid19/raw -out d:/covid19/metadata.csv
 ```
 5. [Convert](./code/convert_to_corpus.py) the raw JSON files into the nomal folder corpus format.
-   This will create a text corpus folder at the location called `./corpus` containing 2 sub folders, one for the abstract and one for the body.
+   This will create a text corpus folder at the location I.E. `./corpus` containing 2 sub folders, one for the abstract and one for the body.
+   Some of the files provide by Kaggle are not full text articles I.E. empty abstract or body.
+   These _incomplete_ files are filtered out of the final folders and noted in `error.csv`
 ```{shell}
 python convert_to_corpus.py -in d:/covid19/raw -out d:/covid19/corpus
 ```
