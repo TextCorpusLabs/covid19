@@ -1,11 +1,15 @@
 from argparse import ArgumentParser
 from collections import namedtuple
+from nltk.tokenize.punkt import PunktSentenceTokenizer, PunktParameters
 from shutil import rmtree
 import csv
 import json
-import nltk.tokenize as tok
 import pathlib
 import progressbar as pb
+
+punkt_param = PunktParameters()
+punkt_param.abbrev_types = set(['al', 'fig', 'i.e', 'e.g'])
+sent_tokenize = PunktSentenceTokenizer(punkt_param)
 
 cite_span = namedtuple('cite_span', 'start end')
 article = namedtuple('article', 'id abstract body')
@@ -63,7 +67,7 @@ def clean_paragraph(paragraph):
     return text
 
 def convert_to_sentences(paragraphs):
-    result = [tok.sent_tokenize(paragraph) for paragraph in paragraphs]
+    result = [sent_tokenize.tokenize(paragraph) for paragraph in paragraphs]
     return result
 
 def write_article(folder_out, article):
