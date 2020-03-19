@@ -77,11 +77,10 @@ def write_corpus(file_out, paragraphs):
                 file_out.write('\n')                
 
 if __name__ == '__main__':
-    #parser = ArgumentParser()
-    #parser.add_argument('-in', '--folder-in', help = 'Folder containing the raw JSON files', required = True)
-    #parser.add_argument('-out', '--folder-out', help = 'Folder containing the newly created text corpus', required = True)
-    #args = parser.parse_args()
-    #print(f'folder in: {args.folder_in}')
-    #print(f'folder out: {args.measure_out}')
-    #convert_to_corpus(args.folder_in, args.folder_out)
-    convert_to_corpus('d:/covid19/raw', 'd:/covid19/corpus')
+    parser = ArgumentParser()
+    parser.add_argument('-in', '--folder-in', help = 'Folder containing the raw JSON files', required = True)
+    parser.add_argument('-out', '--folder-out', help = 'Folder containing the newly created text corpus', required = True)
+    args = parser.parse_args()
+    print(f'folder in: {args.folder_in}')
+    print(f'folder out: {args.measure_out}')
+    convert_to_corpus(args.folder_in, args.folder_out)
