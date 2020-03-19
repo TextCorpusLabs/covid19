@@ -92,7 +92,7 @@ def write_errors(folder_out, errors):
         writer = csv.writer(errors_file, delimiter = ',', quotechar = '"', quoting = csv.QUOTE_ALL)
         writer.writerow(['incomplete article'])
         for error in errors:
-            writer.writerow([error])            
+            writer.writerow([error])
 
 if __name__ == '__main__':
     parser = ArgumentParser()
