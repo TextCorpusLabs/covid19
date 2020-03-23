@@ -49,7 +49,7 @@ I am choosing the `d:/covid19` directory because my d drive is big enough to hol
 2. Retrieve the dataset _by hand_.
    Click on the [download](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge/download) link, saving the file to a know location.   
 3. Extract the data in-place with no folder structure.
-   The `e` switch flattens the extract so the custom code does not need to recursivaly search the folder structure.
+   * The `e` switch flattens the extract so the custom code does not need to recursivaly search the folder structure.
 ```{shell}
 "C:/Program Files/7-Zip/7z.exe" e -od:/covid19/raw "d:/covid19/*.zip"
 ```
